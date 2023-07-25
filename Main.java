@@ -7,176 +7,250 @@ public class Main {
 
         Scanner data = new Scanner(System.in);
 
+        //Day 3 homework (loops)
 
-        // EX1
-        // Write a Java program to print the sum, multiply, subtract, divide and remainder of two numbers.
+
+        //EX1
+        //Write a program that prints the numbers from 1 to 100 such that:
+        //
+        //If the number is a multiple of 3, you need to print "Fizz" instead of that number.
+        //
+        //If the number is a multiple of 5, you need to print "Buzz" instead of that number.
+        //
+        //If the number is a multiple of both 3 and 5, you need to print "FizzBuzz" instead of that number.
 
         System.out.println("EX1");
 
-        System.out.println("please enter the first number");
-        int num1 = data.nextInt();
+        int num1=1;
+        while(num1 <=100){
 
-        System.out.println("please enter the second number");
-        int num2 = data.nextInt();
+            if (num1 % 3 == 0){
+                System.out.println("Fizz");
+            }
+            if (num1 % 5 == 0){
+                System.out.println("Buzz");
+            }
+            if (num1 % 3 == 0 && num1 % 5 == 0){
+                System.out.println("FizzBuzz");
+            }
+            else {
 
+                System.out.println(num1);
+            }
 
+            num1++;
+        }
 
-        System.out.println(num1+ " + "+num2+" = "+num1+num2 );
-        System.out.println(num1+ " - "+num2+" = "+(num1-num2));
-        System.out.println(num1+ " x "+num2+" = "+(num1*num2));
-        System.out.println(num1+ " / "+num2+" = "+(num1/num2));
-        System.out.println(num1+ " mod "+num2+" = "+(num1%num2));
+        //EX2
+        //Write a Java program to reverse a string.
+        //Test Data: Input a string: The quick brown fox Expected Output: Reverse string: xof nworb kciuq ehT
 
-
-
-        // EX2
-        // Write a Java program to convert a given string into lowercase.
 
         System.out.println("EX2");
 
-        System.out.println("please enter the String");
-        String str = data.next();
-        System.out.println(str.toLowerCase());
+        System.out.println("Input a string :");
+        String str = data.nextLine();
+
+        String rstr = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+           rstr += str.charAt(i);
+        }
+
+        System.out.println("Expected Output: " + rstr);
 
 
-        // EX3
-        //Write a Java program that takes a string and a number from the user,then prints the character in the given index.
+
+      //EX3
+      // Write a program that prompts the user to input a positive integer.
+        // It should then print the multiplication table of that number.
+
 
         System.out.println("EX3");
 
-        System.out.print("please enter a string");
-        String str2 = data.next();
+        System.out.println("Please input a positive integer");
+        int num2=data.nextInt();
 
-        System.out.print("please enter an index ");
-        int index = data.nextInt();
+        while (num2 <0) {
+                System.out.println("wrong number !!, please input a positive integer");
+                num2=data.nextInt();}
 
-        System.out.println(str2.charAt(index));
+        for(int i =0 ; i<10;i++){
+            System.out.println(num2 + " X " + (i+1)+" = "+ (num2 * (i+1)));
+        }
 
         //EX4
-        //Write a Java program to accept a number and check the number is even or not.
-        // Prints 1 if the number is even or 0 if the number is odd. (use if-statement)
+        // Write a program to find the factorial value of any number entered through the keyboard.
 
         System.out.println("EX4");
 
-        System.out.print("please enter a number");
-        int num3 = data.nextInt();
 
-        int check = 0;
+        int factorial =1;
+        System.out.println("Please enter the number to get his factorial value");
+        int num3=data.nextInt();
 
-        if (num3 % 2 == 0) {
-            check = 1;
+        for(int i=1 ; i <= num3; i++){
+            factorial *= i;
         }
 
-        System.out.println(check);
+        System.out.println("the factorial for the number "+num3+" is "+factorial);
+
+
 
 
         //EX5
-        //Write a program that checks the role of the user
-
+        // wo numbers are entered through the keyboard. Write a program to find the value of one number
+        // raised to the power of another.  (Do not use Java built-in method)
 
         System.out.println("EX5");
 
-        System.out.println("please enter your your role");
-        String role= data.next();
+        System.out.println("enter the first number");
+        int num4=data.nextInt();
+        System.out.println("enter the second number");
+        int num5=data.nextInt();
 
-        if (role.contains("admin")){
+        int x=1;
 
-            System.out.println("Welcome admin");}
+        for (int i =1 ; i<=num5;i++){
 
-        if(role.contains("superuser")){
+            x*=num4;
+    }
 
-            System.out.println("Welcome superuser");}
+      System.out.println(num4 + " to the power of " +num5 +" is "+ x);
 
-
-        else if(role.contains("User")){
-
-           System.out.println("Welcome User");
-       }
 
 
         //EX6
-        //Write a Java program to calculate the sum of two integers and return
-        // true if the sum is equal to a third integer.
+        // Write a program that reads a set of integers, and then prints the sum of the even and odd integers.
 
         System.out.println("EX6");
 
-        System.out.print("Input the first number:");
-        int x = data.nextInt();
+        System.out.println("enter the integers to find the sum of the even and odd integers or 0 to exit");
+        int num6=data.nextInt();
 
-        System.out.print("Input the second number:");
-        int y = data.nextInt();
+        int evens =0;
+        int odds =0;
 
-        System.out.print("Input the third number:");
-        int xy = data.nextInt();
+        while(num6 !=0){
 
-        int sum = x + y;
+            if (num6 % 2 == 0){
+                evens+=num6;
+            }else if(num6 % 2 != 0){
+                odds+=num6;
+            }
 
-        boolean res = sum == xy;
+            System.out.println("enter the integers to find the sum of the even and odd integers or 0 to exit");
+             num6=data.nextInt();
 
-        System.out.println(res);
+
+        }
+
+        System.out.println("The sum of the even integers is " + evens);
+        System.out.println("The sum of the odd integers is " + odds);
 
 
         //EX7
-        // ake three numbers from the user and print the greatest number.
+        // Write a program that prompts the user to input a positive integer.
+        // It should then output a message indicating whether the number is a prime number.
 
         System.out.println("EX7");
 
-        System.out.print("Input the first number:");
-        int first = data.nextInt();
+        System.out.println("Please input a positive integer");
+        int num7=data.nextInt();
 
-        System.out.print("Input the second number:");
-        int second = data.nextInt();
+        while (num7 < 0) {
+            System.out.println("wrong number !!, please input a positive integer");
+            num7=data.nextInt();}
 
-        System.out.print("Input the third number:");
-        int third = data.nextInt();
+        int smallestprimenumber=2;
 
-        int gratenumber = first;
-
-        if (second > gratenumber){
-            gratenumber=second;
+        while(smallestprimenumber < num7){
+            if(num7 % smallestprimenumber == 0){
+                System.out.println(num7+" is not a prime number");
+                break;
+            }else{
+                System.out.println(num7+" it is is  prime number");
+            }
+            smallestprimenumber++;
         }
 
-         if (third > gratenumber){
-            gratenumber=third;
-        }
-
-        System.out.println("The greatest:"+gratenumber);
 
         //EX8
-        //Write a Java program that keeps a number from the user
-        // and generates an integer between 1 and 7 and displays the name of the weekday.
+        //Write a program to enter the numbers till the user wants and at the
+        // end it should display the count of positive, negative and zeros entered.
 
 
         System.out.println("EX8");
 
-        System.out.println("please enter number between 1 and 7 ");
-        int num= data.nextInt();
+        int num8=0;
+        int contpos =0;
+        int contneg=0;
+        int countzero=0;
+        String str2 = "";
 
-        switch (num) {
-            case 1:
-                System.out.println("Sunday");
-                break;
-            case 2:
-                System.out.println("Monday");
-                break;
-            case 3:
-                System.out.println("Tuesday");
-                break;
-            case 4:
-                System.out.println("Wednesday");
-                break;
-            case 5:
-                System.out.println("Thursday");
-                break;
-            case 6:
-                System.out.println("Friday");
-                break;
-            case 7:
-                System.out.println("Saturday");
-                break;
 
-            default:
-                System.out.println("wrong number!");
+        do {
+            System.out.println("enter the integers to find to show the count of positive, negative and zeros entered.");
+            num8 = data.nextInt();
+
+
+            if (num8 == 0) {
+                countzero++;
+            }
+            if (num8 > 0) {
+                contpos++;
+            }
+            if (num8 < 0) {
+                contneg++;
+            }
+
+            System.out.println("Enter X to exit otherwise to continue"  );
+            str2 = data.next();
+
+        }while(!str2.equals("X") );
+
+        System.out.println("there is "+countzero+" zeros ");
+        System.out.println("there is "+contpos+" positive numbers");
+        System.out.println("there is "+contneg+" negative numbers");
+
+
+        //EX9
+        //Use a for loop to print headings for four weeks (Weeks 1 - 4).
+        // Then use another for loop to print the days (Days 1 -7) for each week.
+
+        for (int i = 1; i <= 4; i++) {
+            System.out.println("Week " + i);
+            for (int d = 1; d <= 7; d++) {
+                System.out.println("Day  " + d);
+            }
         }
+
+
+        //EX10
+        //
+        System.out.print("please enter a word");
+        String str3 = data.next();
+
+        int len = str3.length();
+        int mid = len / 2;
+        boolean isPalindrome = true;
+
+        for (int i = 0; i < mid; i++) {
+            if (str3.charAt(i) != str3.charAt(len- 1 - i)) {
+                System.out.println(str3 + " is not a palindrome.");
+                break; }
+            else{
+                System.out.println(str3 + " is a palindrome.");
+            }
+
+        }
+
+
+
+        
+
+
+
+
     }
 }
