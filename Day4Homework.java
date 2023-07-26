@@ -123,7 +123,7 @@ public class Day4Homework {
         int first3 = nums5[0];
         int last3 = nums5[nums5.length-1];
 
-        // Copy the elements of the original array to the new array
+
         for (int i = 0; i < nums5.length; i++) {
             new1[i] = nums3[i];
             new1[0]=first3;
@@ -157,7 +157,7 @@ public class Day4Homework {
 
 
 
-        //7
+        //EX7
         // Write a menu driven Java program with following option:
 
         System.out.println("EX7");
@@ -277,7 +277,7 @@ public class Day4Homework {
 
         System.out.println("EX9");
         int[] oddandeven = {2,3,40,1,5,9,4,10,7};
-        int[] tempeven = new int[oddandeven.length];
+        
 
 
         int count9=0;
